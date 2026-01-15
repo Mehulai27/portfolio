@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Mehul Mittal - AI Researcher" />
+    <meta property="og:description" content="AI Researcher specializing in machine learning, neural signal processing, and transfer learning. Seeking PhD opportunities in ML research." />
+    <meta property="og:image" content="https://yourwebsite.com/preview-image.png" />
+    <meta property="og:url" content="https://yourwebsite.com" />
+    <title>Mehul Mittal - AI Researcher</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0A0A0A;
+            --secondary: #F5F5F5;
+            --accent: #FF3366;
+            --accent-soft: #FF6B9D;
+            --tech: #00D9FF;
+            --tech-soft: #4DE8FF;
+            --border: #2A2A2A;
+            --shadow: rgba(255, 51, 102, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--secondary);
+            color: var(--primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.03;
+            pointer-events: none;
+            background-image: 
+                repeating-linear-gradient(0deg, transparent, transparent 2px, var(--primary) 2px, var(--primary) 4px),
+                repeating-linear-gradient(90deg, transparent, transparent 2px, var(--primary) 2px, var(--primary) 4px);
+            animation: patternMove 60s linear infinite;
+        }
+
+        @keyframes patternMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(245, 245, 245, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid var(--primary);
+            z-index: 1000;
+            animation: slideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--accent);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 900;
+            line-height: 0.95;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        h1 .gradient-text {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--tech) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--secondary);
+            border: 3px solid var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 3px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--border);
+        }
+
+        .stat {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+        }
+
+        .stat:nth-child(1) { animation-delay: 0.5s; }
+        .stat:nth-child(2) { animation-delay: 0.6s; }
+
+        .stat-number {
+            font-family: 'Space Mono', monospace;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s backwards;
+        }
+
+        .visual-card {
+            background: var(--primary);
+            color: var(--secondary);
+            padding: 3rem;
+            border: 3px solid var(--primary);
+            position: relative;
+            transform: rotate(-1deg);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .visual-card:hover {
+            transform: rotate(0deg);
+        }
+
+        .visual-card::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            right: -10px;
+            width: 100%;
+            height: 100%;
+            background: var(--accent);
+            z-index: -1;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .visual-card:hover::before {
+            top: 15px;
+            right: -15px;
+        }
+
+        .card-header {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            opacity: 0.7;
+        }
+
+        .card-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .tech-tag {
+            padding: 0.4rem 0.8rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.8rem;
+            font-family: 'Space Mono', monospace;
+        }
+
+        section {
+            padding: 8rem 0;
+            position: relative;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .section-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--accent);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .research-grid {
+            display: grid;
+            gap: 3rem;
+        }
+
+        .research-item {
+            border-left: 4px solid var(--accent);
+            padding-left: 2rem;
+            transition: all 0.3s;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+        }
+
+        .research-item:nth-child(1) { animation-delay: 0.1s; }
+        .research-item:nth-child(2) { animation-delay: 0.2s; }
+        .research-item:nth-child(3) { animation-delay: 0.3s; }
+        .research-item:nth-child(4) { animation-delay: 0.4s; }
+
+        .research-item:hover {
+            border-left-color: var(--tech);
+            transform: translateX(10px);
+        }
+
+        .research-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .research-title h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .institution {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .research-date {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: #666;
+            white-space: nowrap;
+        }
+
+        .research-description {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .research-description ul {
+            margin-top: 0.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .research-description li {
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-box {
+            background: white;
+            padding: 2rem;
+            border: 3px solid var(--primary);
+            margin-bottom: 2rem;
+            position: relative;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+        }
+
+        .publication-box::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            right: -8px;
+            width: 100%;
+            height: 100%;
+            background: var(--tech);
+            z-index: -1;
+        }
+
+        .publication-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .publication-authors {
+            color: #666;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .publication-venue {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border: 3px solid var(--primary);
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+        }
+
+        .skill-category:nth-child(1) { animation-delay: 0.1s; }
+        .skill-category:nth-child(2) { animation-delay: 0.2s; }
+        .skill-category:nth-child(3) { animation-delay: 0.3s; }
+        .skill-category:nth-child(4) { animation-delay: 0.4s; }
+
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            right: -8px;
+            width: 100%;
+            height: 100%;
+            background: var(--accent);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-category:hover::before {
+            opacity: 1;
+        }
+
+        .skill-category h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-icon {
+            width: 30px;
+            height: 30px;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-item {
+            padding: 0.5rem 1rem;
+            background: var(--secondary);
+            border: 2px solid var(--border);
+            font-size: 0.9rem;
+            font-family: 'Space Mono', monospace;
+            transition: all 0.3s;
+        }
+
+        .skill-item:hover {
+            background: var(--primary);
+            color: var(--secondary);
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        #contact {
+            background: var(--primary);
+            color: var(--secondary);
+        }
+
+        .contact-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-content h2 {
+            color: var(--secondary);
+            margin-bottom: 2rem;
+        }
+
+        .contact-description {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            padding: 1.2rem 2.5rem;
+            background: var(--secondary);
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            border: 3px solid var(--secondary);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            font-size: 1.1rem;
+        }
+
+        .contact-link:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--secondary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 51, 102, 0.3);
+        }
+
+        footer {
+            background: var(--primary);
+            color: var(--secondary);
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 3px solid var(--accent);
+            position: relative;
+            z-index: 1; 
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 1024px) {
+            h1 { font-size: 4rem; }
+            h2 { font-size: 3rem; }
+            .hero-content { grid-template-columns: 1fr; gap: 3rem; }
+            .hero-stats { grid-template-columns: repeat(2, 1fr); }
+            .visual-card { transform: rotate(0); }
+            #research-interests div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; gap: 2rem !important; }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem; }
+            .nav-links { gap: 1rem; }
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2.5rem; }
+            .hero-stats { grid-template-columns: 1fr; gap: 1.5rem; }
+            .research-header { flex-direction: column; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .cta-buttons { flex-direction: column; }
+            .contact-links { flex-direction: column; align-items: center; }
+            section { padding: 5rem 0; }
+            #research-interests div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+            #research-interests h3 { font-size: 1.3rem !important; }
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-pattern"></div>
+
+    <header>
+        <nav>
+            <div class="logo">MEHUL<span>.</span>MITTAL</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="about">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <div class="hero-label">AI Researcher</div>
+                        <h1>Breaking <span class="gradient-text">Models</span> to Build Better Ones</h1>
+                        <p class="hero-description">
+                            I tackle ML challenges where the solutions aren't in the latest tweet thread. From deep learning architectures to 
+                            GenAI applications, from neural signal processing to transfer learning, I've spent years exploring what 
+                            makes models fail to generalize and what we can actually do about it. I believe good research means rigorous 
+                            experiments, diving deep into both theory and implementation, and honestly reporting what doesn't work.
+                        </p>
+                        <div class="cta-buttons">
+                            <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                            <a href="#research" class="btn btn-secondary">View Research</a>
+                            <a href="https://github.com/mehulmittal27" target="_blank" class="btn btn-secondary">
+                                <svg style="width:16px; margin-right:8px; fill:currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                                GitHub Projects
+                            </a>
+                            <a href="https://github.com/mehulmittal/mehulmittal.github.io/raw/main/research_cv.pdf" target="_blank" class="btn btn-primary">
+                                <svg style="width:16px; margin-right:8px; fill:currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                                </svg>
+                                Download CV
+                            </a>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat">
+                                <span class="stat-number">M.Sc.</span>
+                                <span class="stat-label">Artificial Intelligence (FAU)</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">1</span>
+                                <span class="stat-label">Published Paper (IEEE EMBS)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="visual-card">
+                            <div class="card-header">Research Focus</div>
+                            <div class="card-content">
+                                <h3>ML Research Across Domains</h3>
+                                <p>I work across deep learning, GenAI, transfer learning, and neural signal processing. My research spans 
+                                from fundamental questions about model generalization to practical applications in healthcare AI. I combine 
+                                strong theoretical foundations with hands-on implementation skills, building everything from Transformer architectures 
+                                to LLM-powered systems.</p>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">Deep Learning</span>
+                                    <span class="tech-tag">GenAI/LLMs</span>
+                                    <span class="tech-tag">Transfer Learning</span>
+                                    <span class="tech-tag">Domain Adaptation</span>
+                                    <span class="tech-tag">Research</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Interests Section -->
+        <section id="research-interests" style="background: white; padding: 6rem 0;">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">What Drives Me</div>
+                    <h2>Research Interests</h2>
+                </div>
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+                        <div>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 700;">My Approach</h3>
+                            <p style="color: #555; line-height: 1.8; margin-bottom: 1.5rem;">
+                                I've worked across the full spectrum of modern AI. From implementing state-of-the-art deep learning architectures 
+                                to building GenAI applications with LLMs, from classical machine learning to cutting-edge research in transfer learning. 
+                                My work spans computer vision, NLP, biosignal processing, and more, always focused on the fundamental challenge of 
+                                making models that actually generalize.
+                            </p>
+                            <p style="color: #555; line-height: 1.8; margin-bottom: 1.5rem;">
+                                I believe good research comes from understanding both theory and practice. I dive deep into mathematical foundations, 
+                                read papers obsessively, and then get my hands dirty implementing everything from scratch. I run rigorous experiments, 
+                                do proper ablation studies, and I'm not afraid to report when something doesn't work.
+                            </p>
+                            <p style="color: #555; line-height: 1.8;">
+                                What excites me is asking questions that don't have obvious answers. Why does a model trained on one dataset fail 
+                                completely on another? What are the fundamental limits of current approaches? I've built systems ranging from 
+                                Transformers for EEG signals to RAG architectures for medical LLMs, always pushing to understand what really works 
+                                and why.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 700;">What I Bring</h3>
+                            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                                <div style="border-left: 4px solid var(--accent); padding-left: 1.5rem;">
+                                    <h4 style="font-weight: 700; margin-bottom: 0.5rem; color: var(--accent);">Research Experience</h4>
+                                    <p style="color: #666; line-height: 1.6;">
+                                        Published researcher with hands-on experience designing experiments, implementing neural architectures, 
+                                        and collaborating with interdisciplinary teams including clinicians and neuroscientists.
+                                    </p>
+                                </div>
+                                <div style="border-left: 4px solid var(--tech); padding-left: 1.5rem;">
+                                    <h4 style="font-weight: 700; margin-bottom: 0.5rem; color: var(--tech);">Technical Skills</h4>
+                                    <p style="color: #666; line-height: 1.6;">
+                                        Strong programming skills in PyTorch and TensorFlow. I know how to build robust experimental pipelines, 
+                                        track experiments properly, and write code that other researchers can actually use.
+                                    </p>
+                                </div>
+                                <div style="border-left: 4px solid var(--accent); padding-left: 1.5rem;">
+                                    <h4 style="font-weight: 700; margin-bottom: 0.5rem; color: var(--accent);">Critical Thinking</h4>
+                                    <p style="color: #666; line-height: 1.6;">
+                                        I ask hard questions about whether my results are real or artifacts. I run ablation studies, 
+                                        check my assumptions, and I'm not afraid to throw away code that doesn't work.
+                                    </p>
+                                </div>
+                                <div style="border-left: 4px solid var(--tech); padding-left: 1.5rem;">
+                                    <h4 style="font-weight: 700; margin-bottom: 0.5rem; color: var(--tech);">Communication</h4>
+                                    <p style="color: #666; line-height: 1.6;">
+                                        I can explain complex ML concepts clearly, write papers that people can understand, and present 
+                                        my work to both technical and non-technical audiences.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 3rem; padding: 2rem; background: var(--secondary); border-left: 4px solid var(--accent);">
+                        <p style="font-size: 1.1rem; line-height: 1.8; color: #333; margin: 0;">
+                            <strong>Looking ahead:</strong> I'm seeking PhD opportunities where I can work on fundamental questions 
+                            in machine learning. I want to be somewhere that values rigorous research, encourages asking hard questions, 
+                            and understands that negative results are still valuable results.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Experience Section -->
+        <section id="research">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">Where I've Worked</div>
+                    <h2>Research Experience</h2>
+                </div>
+                <div class="research-grid">
+                    <div class="research-item">
+                        <div class="research-header">
+                            <div class="research-title">
+                                <h3>Master's Thesis: Transfer Learning for Biomedical Signal Processing</h3>
+                                <p class="institution">Machine Learning and Data Analytics Lab, FAU (Prof. Dr. Björn Eskofier)</p>
+                            </div>
+                            <div class="research-date">May 2024 - Nov 2025</div>
+                        </div>
+                        <div class="research-description">
+                            <p style="margin-bottom: 1rem;">
+                                <strong>The Question:</strong> Can we train a model on one person's brain signals and have it work on someone else's, 
+                                even though we're trying to decode the same cognitive task?
+                            </p>
+                            <p style="margin-bottom: 1rem;">
+                                <strong>What I Found:</strong> Current domain adaptation methods completely fail for this problem. Models trained 
+                                on other subjects perform no better than random chance, even when everything is implemented correctly. The models 
+                                appear to learn idiosyncratic patterns specific to each individual rather than task-relevant features.
+                            </p>
+                            <p style="margin-bottom: 1rem;">
+                                <strong>Why This Matters:</strong> These results are scientifically valuable. They tell us we need fundamentally 
+                                different approaches, not just better hyperparameters.
+                            </p>
+                            <p><strong>Technical Details:</strong></p>
+                            <ul>
+                                <li>Built robust experimental pipeline processing over 1 million EEG samples with careful quality control</li>
+                                <li>Implemented multiple state-of-the-art architectures (EEGNet, EEGConformer, ATCNet, Vision Transformers)</li>
+                                <li>Trained hundreds of models with systematic ablation studies to ensure findings weren't implementation artifacts</li>
+                                <li>Used proper research infrastructure (MLflow, DVC) to ensure reproducibility</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="research-item">
+                        <div class="research-header">
+                            <div class="research-title">
+                                <h3>Research Assistant</h3>
+                                <p class="institution">Machine Learning and Data Analytics Lab, FAU (Prof. Dr. Björn Eskofier)</p>
+                            </div>
+                            <div class="research-date">Mar 2024 - Apr 2025</div>
+                        </div>
+                        <div class="research-description">
+                            <ul>
+                                <li>Conducted research on detecting Freeze of Gait episodes in Parkinson's Disease patients using wearable sensors</li>
+                                <li>Developed deep learning models for real-time classification of movement patterns from multimodal sensor data</li>
+                                <li>Investigated patient-specific versus population-level models, analyzing how inter-patient variability affects performance</li>
+                                <li>Co-authored peer-reviewed conference paper analyzing subjective motor activity perception in Parkinson's Disease</li>
+                                <li>Collaborated with clinicians and neuroscientists to ensure research had real-world translational potential</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="research-item">
+                        <div class="research-header">
+                            <div class="research-title">
+                                <h3>Capstone Project: Healthcare Analytics with LLMs</h3>
+                                <p class="institution">Master's Program, FAU</p>
+                            </div>
+                            <div class="research-date">Oct 2023 - Mar 2024</div>
+                        </div>
+                        <div class="research-description">
+                            <p style="margin-bottom: 1rem;">
+                                Developed an intelligent medical chatbot using Retrieval-Augmented Generation (RAG) architecture to assist healthcare 
+                                professionals with evidence-based clinical decision support.
+                            </p>
+                            <p><strong>Key Achievements:</strong></p>
+                            <ul>
+                                <li>Implemented RAG pipeline combining LLMs with medical knowledge base for contextually accurate responses</li>
+                                <li>Designed and evaluated multiple retrieval strategies for medical literature and clinical guidelines</li>
+                                <li>Built comprehensive evaluation framework assessing factual accuracy, clinical relevance, and safety</li>
+                                <li>Investigated hallucination mitigation techniques and citation mechanisms for trustworthy AI in healthcare</li>
+                                <li>Demonstrated significant improvement in response quality compared to vanilla LLM approaches</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="research-item">
+                        <div class="research-header">
+                            <div class="research-title">
+                                <h3>AI Research Engineer</h3>
+                                <p class="institution">Robert Bosch GmbH</p>
+                            </div>
+                            <div class="research-date">Mar 2025 - Sep 2025</div>
+                        </div>
+                        <div class="research-description">
+                            <ul>
+                                <li>Developed LLM-based solution using prompt engineering and fine-tuning to standardize technical diagrams</li>
+                                <li>Conducted research on optimal prompting strategies and model selection for domain-specific technical tasks</li>
+                                <li>Systematically evaluated different architectures and training approaches</li>
+                                <li>Implemented research prototype into production systems, bridging gap between experimental research and practice</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" style="background: var(--secondary); padding: 6rem 0;">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">Published Work</div>
+                    <h2>Publications</h2>
+                </div>
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <div class="publication-box">
+                        <div class="publication-title">
+                            Investigating Subjective Motor Activity Perception and Gait in Parkinson's Disease
+                        </div>
+                        <div class="publication-authors">
+                            Slim, S., Küderle, A., Moradi, H., <strong>Mittal, M.</strong>, Salin, E., Winkler, J., & Eskofier, B.
+                        </div>
+                        <div class="publication-venue">
+                            IEEE EMBS International Conference on Biomedical and Health Informatics (BHI 2025)
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: white; border-left: 4px solid var(--tech);">
+                        <p style="color: #555; line-height: 1.7;">
+                            <strong>Additional Projects:</strong> Various course projects on deep learning, computer vision, and NLP including 
+                            cell segmentation systems, medical chatbots with RAG architecture, and Azure data engineering pipelines.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">Technical Toolkit</div>
+                    <h2>Research Skills</h2>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3><span class="skill-icon">🔬</span> Research Methods</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">Experimental Design</span>
+                            <span class="skill-item">Hypothesis Testing</span>
+                            <span class="skill-item">Ablation Studies</span>
+                            <span class="skill-item">Statistical Analysis</span>
+                            <span class="skill-item">Scientific Writing</span>
+                            <span class="skill-item">Literature Review</span>
+                            <span class="skill-item">Reproducible Research</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3><span class="skill-icon">🧠</span> Deep Learning</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">PyTorch</span>
+                            <span class="skill-item">TensorFlow</span>
+                            <span class="skill-item">PyTorch Lightning</span>
+                            <span class="skill-item">CNNs/RNNs/LSTMs</span>
+                            <span class="skill-item">Transformers</span>
+                            <span class="skill-item">Attention Mechanisms</span>
+                            <span class="skill-item">Transfer Learning</span>
+                            <span class="skill-item">Domain Adaptation</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3><span class="skill-icon">📊</span> ML Techniques</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">Supervised Learning</span>
+                            <span class="skill-item">Self-Supervised Learning</span>
+                            <span class="skill-item">Contrastive Learning</span>
+                            <span class="skill-item">Meta-Learning</span>
+                            <span class="skill-item">Few-Shot Learning</span>
+                            <span class="skill-item">Reinforcement Learning</span>
+                            <span class="skill-item">Bayesian Methods</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3><span class="skill-icon">🔧</span> Research Tools</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">MLflow</span>
+                            <span class="skill-item">Weights & Biases</span>
+                            <span class="skill-item">DVC</span>
+                            <span class="skill-item">Git/GitHub</span>
+                            <span class="skill-item">Jupyter</span>
+                            <span class="skill-item">LaTeX</span>
+                            <span class="skill-item">Docker</span>
+                            <span class="skill-item">HPC/SLURM</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3><span class="skill-icon">📈</span> Signal Processing</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">EEG Analysis</span>
+                            <span class="skill-item">Time Series</span>
+                            <span class="skill-item">Wavelet Transforms</span>
+                            <span class="skill-item">Spectral Analysis</span>
+                            <span class="skill-item">Feature Extraction</span>
+                            <span class="skill-item">Biosignal Processing</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3><span class="skill-icon">💻</span> Programming</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">Python (Expert)</span>
+                            <span class="skill-item">NumPy/Pandas</span>
+                            <span class="skill-item">Scikit-learn</span>
+                            <span class="skill-item">Matplotlib/Seaborn</span>
+                            <span class="skill-item">R</span>
+                            <span class="skill-item">MATLAB</span>
+                            <span class="skill-item">C++</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3><span class="skill-icon">🤖</span> Advanced Topics</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">LLMs</span>
+                            <span class="skill-item">RAG Systems</span>
+                            <span class="skill-item">Prompt Engineering</span>
+                            <span class="skill-item">Fine-Tuning</span>
+                            <span class="skill-item">Computer Vision</span>
+                            <span class="skill-item">NLP</span>
+                            <span class="skill-item">Graph Neural Networks</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3><span class="skill-icon">🌍</span> Languages</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">English (Fluent)</span>
+                            <span class="skill-item">German (A2)</span>
+                            <span class="skill-item">Hindi (Native)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="section-label" style="color: var(--accent);">Let's Collaborate</div>
+                    <h2>Get in Touch</h2>
+                    <p class="contact-description">
+                        I'm looking for PhD opportunities where I can work on fundamental questions in machine learning. 
+                        If you're working on problems related to generalization, transfer learning, or domain adaptation, 
+                        I'd love to hear from you.
+                    </p>
+                    <div class="contact-links">
+                        <a href="mailto:mehulmittal1299@gmail.com" class="contact-link">Email Me</a>
+                        <a href="https://linkedin.com/in/mehulmittal27" class="contact-link" target="_blank">LinkedIn</a>
+                        <a href="https://github.com/mehulmittal27" class="contact-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#research">Research</a>
+                <a href="#publications">Publications</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p class="copyright">© 2026 Mehul Mittal. Breaking models to build better ones.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+        document.querySelectorAll('section').forEach(section => {
+            const header = section.querySelector('.section-header');
+            if (header && !header.classList.contains('scroll-reveal')) {
+                header.classList.add('scroll-reveal');
+                observer.observe(header);
+            }
+        });
+    </script>
+</body>
+</html>
